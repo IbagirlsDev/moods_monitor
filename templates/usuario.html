@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Estados de Ánimo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitor de Estados de Ánimo</h1>
+
+        <!-- Mensaje de bienvenida -->
+        <h2>Bienvenido</h2>
+
+        <!-- Mensajes flash -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Formulario de usuario -->
+        <form method="post" id="moodForm" action="{{ url_for('usuario_dashboard') }}">
+            
+            <!-- Campo de correo electrónico -->
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+
+            <h2>Selecciona tu estado de ánimo:</h2>
+            <div id="emoji-container">
+                <label><input type="radio" name="emoji" value="1"> 😊 Feliz</label>
+                <label><input type="radio" name="emoji" value="2"> 😢 Triste</label>
+                <label><input type="radio" name="emoji" value="3"> 😡 Enojado</label>
+                <label><input type="radio" name="emoji" value="4"> 😴 Cansado</label>
+                <label><input type="radio" name="emoji" value="5"> 😕 Confundido</label>
+            </div>
+
+            <div id="emotion-options-container">
+                <label for="emotion-options">¿Cuál es la razón principal?</label>
+                <select name="emotion-options" id="emotion-options" required>
+                    <option value="">Seleccione una opción</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group" id="other-reason-container" style="display: none;">
+                <label for="reason">¿Por qué te sientes de esta forma?</label>
+                <textarea name="reason" id="reason" rows="4" placeholder="Explica tu estado de ánimo..."></textarea>
+            </div>
+
+            <button type="submit" class="button">Guardar</button>
+        </form>
+
+        <!-- Asistente virtual -->
+        <div id="assistant-container">
+            <h2>Habla con un coaching de vida</h2>
+            <a href="https://chatgpt.com/g/g-slIgK6mCG-equilibrio-emocional" target="_blank">
+                <button class="button">Interactúa con tu coaching virtual</button>
+            </a>            
+        </div>
+        <br>
+         <!-- Botón de Salir -->
+         <form action="/logout" method="POST">
+            <button type="submit" class="button">Salir</button>
+        </form>
+    </div>
+    
+    <!-- Prevenir navegación hacia atrás después de cerrar sesión -->
+    <script>
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        setTimeout("noBack()", 0);
+        window.onload = noBack;
+    </script>    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

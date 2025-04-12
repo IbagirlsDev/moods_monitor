@@ -1,0 +1,174 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #A7C7E7; /* Azul celeste suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background-color: #ffffff; /* Blanco para fondo del contenedor */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+    z-index: 1; /* Asegura que el contenedor esté sobre los emojis */
+}
+
+h1, h2 {
+    color: #045D71; /* Azul más oscuro para los encabezados */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Ajuste de campos de nombre y correo */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #B8E2C8; /* Verde menta suave */
+    border-radius: 5px;
+}
+
+/* Estilo para el select */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #B8E2C8; /* Verde menta suave */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Espacio debajo del select */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* Ajuste de campos de nombre y correo */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #045D71;
+}
+
+/* Ajustes del contenedor de emojis */
+#emoji-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Estilo del área de texto */
+textarea {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #B8E2C8;
+    border-radius: 5px;
+}
+
+/* Estilos del botón */
+.button {
+    background-color: #f7a48b; /* Coral suave */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #FFB299; /* Coral más intenso al pasar el ratón */
+}
+
+#assistant-container {
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFD1C1;
+}
+
+/* Emojis flotantes en el fondo */
+body::before {
+    content: "😊 😢 😡 😴 😕 😄";
+    font-size: 5em;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    z-index: 0;
+    opacity: 0.08;
+    animation: emojiFloat 20s infinite linear;
+}
+
+@keyframes emojiFloat {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100vw, 100vh); }
+}
+
+body::after {
+    content: "😊 😢 😡 😴 😕 😄";
+    font-size: 5em;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    z-index: 0;
+    opacity: 0.08;
+    animation: emojiFloat 30s infinite linear reverse;
+}
+
+/* Contenedor de los botones */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Estilos del botón de atrás */
+.back-button {
+    background-color: #D3D3D3; /* Gris */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Espacio entre los botones */
+}
+
+.back-button:hover {
+    background-color: #A9A9A9; /* Gris más oscuro al pasar el ratón */
+}

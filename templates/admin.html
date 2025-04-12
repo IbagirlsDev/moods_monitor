@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Administrador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de Administrador</h1>
+        <p>Obten el informe completo de los Estados de Animo de los usuarios.</p>
+        <!-- Botón para descargar el informe -->
+        <a href="/download_data"><button class="button">Descargar Informe</button></a>
+        <br><br>
+         <!-- Botón de Salir -->
+         <form action="/logout" method="POST">
+            <button type="submit" class="button">Salir</button>
+        </form>        
+    </div>
+    <!-- Prevenir navegación hacia atrás después de cerrar sesión -->
+    <script>
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        setTimeout("noBack()", 0);
+        window.onload = noBack;
+    </script>
+</body>
+</html>

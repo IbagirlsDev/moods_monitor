@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Coaching virtual</h1>
+
+        <!-- Mostrar mensaje de flash -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <!-- Asistente virtual -->
+        <div id="assistant-container">
+            <p id="default-message">Te invitamos a hablar con nuestro coach de Equilibrio emocional.</p>
+            <label for="emotion-options">Te invitamos a hablar con nuestro coach de Equilibrio emocional.</label>
+            <br>
+            <!-- Divs para diferentes emociones -->
+            <div id="emocion-1" class="emotion-buttons" style="display: none;">
+                <a href="https://chatgpt.com/g/g-673ea1fe720c8191a699d5c43414817d-serenna" target="_blank">
+                    <button class="button">Interactúa con Serenna</button>
+                </a>
+            </div>
+            <div id="emocion-2" class="emotion-buttons" style="display: none;">
+                <a href="https://chatgpt.com/g/g-673ea6b6f87081918a2bb11c5bc0f9bd-lumina" target="_blank">
+                    <button class="button">Interactúa con Lumina</button>
+                </a>
+            </div>
+            <div id="emocion-3" class="emotion-buttons" style="display: none;">
+                <a href="https://chatgpt.com/g/g-673ea9bb30d481918f3a9877449c6f29-serenity-coach" target="_blank">
+                    <button class="button">Interactúa con Serenity</button>
+                </a>
+            </div>
+            <div id="emocion-4" class="emotion-buttons" style="display: none;">
+                <a href="https://chatgpt.com/g/g-673eab9bd064819194ec256adbe9a526-vitalis-coach" target="_blank">
+                    <button class="button">Interactúa con Vitalis</button>
+                </a>
+            </div>
+            <div id="emocion-5" class="emotion-buttons" style="display: none;">
+                <a href="https://chatgpt.com/g/g-673eac80af8c8191b0de1760afacd7e3-visionpath" target="_blank">
+                    <button class="button">Interactúa con Visionpath</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="button-group">
+            <button type="button" class="back-button" onclick="goBack()">Atrás</button>
+            <!-- Botón de Salir -->
+            <form action="/logout" method="POST">
+                <button type="submit" class="button">Salir</button>
+            </form>
+        </div>
+        
+    </div>
+    <script>
+        const emocion_id = "{{ emocion_id }}";
+        console.log("Emocion ID:", emocion_id);
+        // Mostrar el div correspondiente a la emoción
+        if (emocion_id) {
+            document.getElementById('default-message').style.display = 'none';
+            const emotionDiv = document.getElementById('emocion-' + emocion_id);
+            if (emotionDiv) {
+                emotionDiv.style.display = 'block';
+            }
+        }
+        function goBack() {
+            window.location.href = '/usuario';
+        }
+    </script>
+</body>
+</html>
