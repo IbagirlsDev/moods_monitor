@@ -1,1 +1,1 @@
-web: gunicorn Modulo_Bienestar:app
+web: gunicorn app:app
