@@ -37,10 +37,12 @@ p {
 /* Ajuste de campos de nombre y correo */
 input, textarea {
     width: 100%;
-    padding: 10px;
+    height: 35px;
+    /*padding: 10px;*/
     font-size: 16px;
     border: 1px solid #B8E2C8; /* Verde menta suave */
     border-radius: 5px;
+    padding-left: 10px;
 }
 
 /* Estilo para el select */
@@ -98,7 +100,7 @@ textarea {
 
 /* Estilos del botón */
 .button {
-    background-color: #f7a48b; /* Coral suave */
+    background-color: #5089ca; /* Coral suave */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -109,8 +111,27 @@ textarea {
 }
 
 .button:hover {
-    background-color: #FFB299; /* Coral más intenso al pasar el ratón */
+    background-color: #6a9ad1; /* Coral más intenso */
 }
+
+.button_r {
+    background-color: #B8E2C8; /* Coral suave */
+    color: rgb(16, 94, 74);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button_r:hover {
+    background-color: #B8E2C8; /* Coral más intenso */
+    color: rgb(16, 94, 74);
+}/*045D71 0b6377 B8E2C8*/
+
+
+
 
 #assistant-container {
     margin-top: 30px;
@@ -158,7 +179,7 @@ body::after {
 
 /* Estilos del botón de atrás */
 .back-button {
-    background-color: #D3D3D3; /* Gris */
+    background-color: #A9A9A9; /* Gris */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -170,5 +191,6 @@ body::after {
 }
 
 .back-button:hover {
-    background-color: #A9A9A9; /* Gris más oscuro al pasar el ratón */
+    background-color: #bbbbbb; /* Gris más oscuro al pasar el ratón */
+    color: white;
 }
