@@ -130,6 +130,20 @@ textarea {
     color: rgb(16, 94, 74);
 }/*045D71 0b6377 B8E2C8*/
 
+.button_c{
+    background-color: #8b5c15; /* Coral suave */
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}     
+
+.button_c:hover {
+    background-color: #8b5c15; /* Coral más intenso */
+}
 
 
 
