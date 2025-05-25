@@ -131,7 +131,7 @@ textarea {
 }/*045D71 0b6377 B8E2C8*/
 
 .button_c{
-    background-color: #ee8540; /* Coral suave */
+    background-color: #f1975c; /* Coral suave */
     color:white;
     padding: 10px 20px;
     border: none;
@@ -142,7 +142,7 @@ textarea {
 }     
 
 .button_c:hover {
-    background-color: #ee8540; /* Coral más intenso */
+    background-color: #f1975c; /* Coral más intenso */
 }
 
 
